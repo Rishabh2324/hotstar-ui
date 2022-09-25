@@ -1,0 +1,8 @@
+@use '../../scss/index.scss' as *;
+
+.Input {
+  color: var(--TEXT_COLOR_L2);
+  @include fluid-font-size(1, 0.875);
+  @include inputCommonProperties(bottom,1px,solid,var(--BRAND_BLUE));
+  text-transform: capitalize;
+}

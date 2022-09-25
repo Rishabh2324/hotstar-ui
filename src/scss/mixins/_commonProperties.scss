@@ -1,0 +1,30 @@
+@mixin butttonCommonProperties($color: null, $backgroundColor: null) {
+  color: $color;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: $backgroundColor;
+}
+
+@mixin showHoverForBackground($defaultColor: null, $hoverColor: null) {
+  background-color: $defaultColor;
+  transition: 0.2s ease;
+  &:hover {
+    background-color: $hoverColor;
+  }
+}
+
+@mixin inputCommonProperties($direction, $width, $style, $color) {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-#{$direction}: $width $style $color;
+}
+
+@mixin transition($transition) {
+  transition: $transition;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+}

@@ -1,0 +1,49 @@
+@use '../../scss/index.scss' as *;
+.ThumbnailCard {
+  position: relative;
+  overflow: hidden;
+  color: var(--TEXT_COLOR_L0);
+  border-radius: 5px;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 2;
+    & > * {
+      opacity: 1;
+    }
+  }
+
+  &__details {
+    position: absolute;
+    padding: 4px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    background-image: var(--BG_GRADIENT_L3);
+
+    &-title {
+      @include fluid-font-size(1, 0.625, 500);
+      @include text-clamp();
+    }
+    &-category {
+      display: block;
+      @include fluid-font-size(0.625, 0.5, 500);
+      @include text-clamp();
+    }
+    &-summary {
+      display: block;
+      @include fluid-font-size(0.625, 0.5);
+      @include text-clamp(2);
+    }
+    &-button {
+      width: 100%;
+      @include fluid-font-size(0.5, 0.3, 500);
+      text-transform: uppercase;
+      padding: 4.75px;
+    }
+  }
+}
+

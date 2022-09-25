@@ -1,0 +1,64 @@
+// < ------- all are expressed in rem ------>
+// $max-vw : view port maximum width
+// $min-vw : view port minimum width
+// $max-font-size : maximum font size 
+// $min-font-size : minimum font-size
+// -wu : with unit
+
+@use 'sass:math';
+
+@mixin text-ellipses {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin text-clamp($lines:1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+
+@function relativeViewPort($max-vw, $min-vw, $max-font-size, $min-font-size) {
+  @return math.div(100 * ($max-font-size - $min-font-size), ($max-vw - $min-vw)) +
+    vw;
+}
+
+@function relativeFontSize($max-vw, $min-vw, $max-font-size, $min-font-size) {
+  @return math.div(
+      (($min-vw * $max-font-size) - ($max-vw * $min-font-size)),
+      ($min-vw - $max-vw)
+    ) + rem;
+}
+
+@mixin fluid-font-size(
+  $max-font-size,
+  $min-font-size,
+  $font-weight: 400,
+  $max-vw: 71.25, //1140px
+  $min-vw: 20, //320px
+) {
+  $min-font-size-wu: $min-font-size + rem;
+  $max-font-size-wu: $max-font-size + rem;
+  font-size: clamp(
+    $min-font-size-wu,
+    (
+      relativeViewPort(
+          $max-vw,
+          $min-vw,
+          $max-font-size,
+          $min-font-size
+        ) +
+        relativeFontSize(
+          $max-vw,
+          $min-vw,
+          $max-font-size,
+          $min-font-size
+        )
+    ),
+    $max-font-size-wu
+  );
+  font-weight: $font-weight;
+}

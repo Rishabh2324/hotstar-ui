@@ -1,0 +1,12 @@
+@use '../../scss/index.scss' as *;
+
+.IconWithTitleLink {
+  &__icon{
+    width: 24px;
+    height: 24px;
+  }
+  &__title {
+    @include fluid-font-size(.625, .5);
+    color: var(--TEXT_COLOR_L2);
+  }
+}
