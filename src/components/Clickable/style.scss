@@ -1,0 +1,21 @@
+@use '../../scss/index.scss' as *;
+
+.Clickable {
+  transition: 0.2s ease-in-out;
+  @include text-clamp();
+  &.medium {
+    @include fluid-font-size(1.25, 0.7031, 500);
+  }
+  &.large {
+    @include fluid-font-size(1.5, 1, 500);
+  }
+  &.isHoverable {
+    color: var(--TEXT_COLOR_L0);
+    &:hover {
+      color: var(--BRAND_BLUE);
+    }
+  }
+  &.default {
+    color: var(--BRAND_BLUE);
+  }
+}

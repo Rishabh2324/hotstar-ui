@@ -1,0 +1,14 @@
+@use '../../scss/index.scss' as *;
+
+.Button {
+  border-radius: 2px;
+  &--brand-blue {
+    @include butttonCommonProperties(var(--TEXT_COLOR_L0), var(--BRAND_BLUE));
+  }
+  &--gray {
+    @include butttonCommonProperties(var(--TEXT_COLOR_L2), var(--BG_COLOR_L2));
+    &.showHover {
+      @include showHoverForBackground(transparent, var(--BG_COLOR_L2));
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use '../../scss/index.scss' as *;
+
+.SearchBar {
+  position: relative;
+  input[type='search'] {
+    @include inputCommonProperties(bottom, 1px, solid, var(--TEXT_COLOR_L1));
+
+    &:focus {
+      @include inputCommonProperties(bottom, 1px, solid, var(--BRAND_BLUE));
+      @include transition(0.2s ease-out);
+    }
+
+    &::placeholder {
+      color: var(--TEXT_COLOR_L1);
+      @include fluid-font-size(1, 1);
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      -webkit-appearance: none;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    left: 155px;
+    top: 5px;
+  }
+}

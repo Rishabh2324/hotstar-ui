@@ -1,0 +1,64 @@
+@use './scss/index.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+label {
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+img {
+  max-width: 100%;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --BRAND_BLUE: #1f80e0;
+  --BRAND_RED: #f15151;
+  --BRAND_ORANGE: #db882a;
+  --BG_COLOR_L0: #0c111b;
+  --BG_COLOR_L1: #192133;
+  --BG_COLOR_L2: #334366;
+  --BG_COLOR_L3: #9099991a;
+  --BG_COLOR_L4: #1b1f20;
+  --CARD_GRADIENT: #030b17;
+  --HEADER_COLOR: #121926;
+  --BORDER_COLOR_L0: #2e3333;
+  --TEXT_COLOR_L0: #fff;
+  --TEXT_COLOR_L1: #ffffffcc;
+  --TEXT_COLOR_L2: #ffffff99;
+  --TEXT_COLOR_L3: #dadada;
+  --TEXT_COLOR_L4: #909999;
+  --TEXT_COLOR_L5: #f9f9f9;
+  --TEXT_LINK_COLOR: #1f80e0;
+  --TEXT_BTN_COLOR: #1f80e0;
+  --BG_GRADIENT_L0: linear-gradient(to bottom, #141b29, #0c111b 300px);
+  --BG_GRADIENT_L1: linear-gradient(to bottom, #192133, #111826);
+  --BG_GRADIENT_L2: linear-gradient(to bottom, hsl(221, 33%, 30%), #334366, #1c2940);
+  --BG_GRADIENT_L2: linear-gradient(to bottom, hsl(221, 33%, 30%), #334366, #1c2940);
+  --BG_GRADIENT_L3: linear-gradient(to bottom, #04080f00, var(--BG_COLOR_L1), var(--BG_COLOR_L1));
+}
+
+body {
+  margin: 0;
+  color: var(--TEXT_COLOR_L0);
+  background: var(--BG_GRADIENT_L0);
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto","HelveticaNeue-Light",sans-serif;
+}
