@@ -10,8 +10,9 @@ interface INavbar {
 const Navbar: FC<INavbar> = ({ navlinks }) => {
   return (
     <div className="Navbar">
-      {navlinks.map((link) => (
+      {navlinks.map((link, index) => (
         <IconWithTitleLink
+          key={index}
           linkTo={link.linkTo}
           title={link.title}
           icon={link.icon}
