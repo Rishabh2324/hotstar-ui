@@ -14,8 +14,17 @@
 
   &__details {
     background: var(--BG_COLOR_L1);
-    width: 80%;
     height: 100%;
     opacity: 1;
+
+    &.fromLeft {
+      width: 80%;
+      margin-right: auto;
+    }
+
+    &.fromRight {
+      width: 100%;
+      margin-left: auto;
+    }
   }
 }

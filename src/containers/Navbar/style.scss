@@ -30,17 +30,62 @@
   }
 
   &__logo {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     margin-right: 10px;
     cursor: pointer;
   }
 
-  &__searchIcon, &__menuIcon {
+  &__searchIcon,
+  &__menuIcon {
     padding: 10px;
     cursor: pointer;
     & * {
       stroke: var(--TEXT_COLOR_L2);
       fill: var(--TEXT_COLOR_L2);
+    }
+  }
+
+  &__leftSidebar {
+
+    .smallIcon {
+      svg {
+        width: 15px;
+        height: 15px;
+        & * {
+          fill: var(--TEXT_COLOR_L0);
+        }
+      }
+    }
+
+    .itemContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      color: var(--TEXT_COLOR_L0);
+
+      .text1 {
+        @include fluid-font-size(1.5, 1, 500);
+      }
+      .text2 {
+        margin-top: 5px;
+        @include fluid-font-size(1, 0.7031);
+      }
+
+      &.iconWithText {
+        justify-content: flex-start;
+        span {
+          margin-left: 25px;
+        }
+      }
+
+      &.activeLink {
+        background-color: var(--BG_COLOR_L0);
+      }
+
+      &.separator {
+        border-bottom: 0.5px solid var(--TEXT_COLOR_L4);
+      }
     }
   }
 }
