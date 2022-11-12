@@ -76,6 +76,7 @@
         justify-content: flex-start;
         span {
           margin-left: 25px;
+          @include fluid-font-size(1.5, 1);
         }
       }
 

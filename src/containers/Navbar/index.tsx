@@ -57,7 +57,7 @@ const Navbar = () => {
             }`
           }
         >
-          {link.icon} <span className="text1">{link.title}</span>
+          {link.icon} <span>{link.title}</span>
         </NavLink>
       ))}
     </div>
