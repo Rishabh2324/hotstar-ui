@@ -6,6 +6,8 @@ interface IHeader {
   children: JSX.Element;
 }
 
-export const Header: FC<IHeader> = ({ children }) => {
+const Header: FC<IHeader> = ({ children }) => {
   return <header className="Header">{children}</header>;
 };
+
+export default Header;

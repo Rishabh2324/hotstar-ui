@@ -1,0 +1,46 @@
+@use '../../scss/index.scss' as *;
+
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 56px;
+
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &-navItem {
+      color: var(--TEXT_COLOR_L1);
+      @include fluid-font-size(1, 0.7031);
+    }
+  }
+
+  &__searchIcon {
+    width: 15px;
+    height: 15px;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  &__menuIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__logo {
+    margin-bottom: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  &__searchIcon, &__menuIcon {
+    padding: 10px;
+    cursor: pointer;
+    & * {
+      stroke: var(--TEXT_COLOR_L2);
+      fill: var(--TEXT_COLOR_L2);
+    }
+  }
+}

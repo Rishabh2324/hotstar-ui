@@ -1,7 +1,19 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+
+type DeviceType = 'mobile' | 'desktop';
 
 const useDeviceCheck = () => {
-  return <div>useDeviceCheck</div>;
+  const [deviceType, setDeviceType] = useState<DeviceType>('desktop');
+
+  useEffect(() => {
+    setDeviceType(
+      window.navigator.userAgent.includes('Mobile') ? 'mobile' : 'desktop'
+    );
+  }, []);
+
+  return {
+    deviceType,
+  };
 };
 
 export default useDeviceCheck;

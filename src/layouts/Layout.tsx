@@ -1,49 +1,31 @@
-import Navbar from '../components/NavBar';
-import { Footer } from './Footer';
-import { Header } from './Header';
-
-import { ReactComponent as HomeIcon } from '../assets/icons/homeIcon.svg';
-import { ReactComponent as TvIcon } from '../assets/icons/tvIcon.svg';
-import { ReactComponent as CompanyLogo } from '../assets/logos/logoDisneyPlusOnly.svg';
-import { ReactComponent as CinemaIcon } from '../assets/icons/cinemaIcon.svg';
-import { ReactComponent as SportsIcon } from '../assets/icons/sportIcon.svg';
 import { Outlet } from 'react-router-dom';
 
-const navlinks = [
-  {
-    icon: <HomeIcon />,
-    title: 'Home',
-    linkTo: '/',
-  },
-  {
-    icon: <TvIcon stroke="var(--TEXT_COLOR_L4)" />,
-    title: 'TV',
-    linkTo: '/tv',
-  },
-  {
-    icon: <CompanyLogo />,
-    linkTo: '/',
-  },
-  {
-    icon: <CinemaIcon />,
-    title: 'Movies',
-    linkTo: '/movies',
-  },
-  {
-    icon: <SportsIcon />,
-    title: 'Sports',
-    linkTo: '/sports',
-  },
-];
+import topNavlinks from '../constants/topNavLinks';
+import bottomNavLinks from '../constants/bottomNavLinks';
 
+import Footer from './Footer';
+import Header from './Header';
+import BottomBar from '../containers/BottomBar';
+import Navbar from '../containers/Navbar';
+
+const AppHeader = () => {
+  return <Navbar links={topNavlinks} />;
+};
+
+const AppFooter = () => {
+  return <BottomBar links={bottomNavLinks} />;
+};
+
+// Common Layout for all pages with Header and Footer
 const Layout = () => {
   return (
     <>
-      <Header children={<h1>Header</h1>} />
+      <Header children={<AppHeader />} />
       <main>
+        {/* <Outlet /> is used to renders the child route's element */}
         <Outlet />
       </main>
-      <Footer children={<Navbar navlinks={navlinks} />} />
+      <Footer children={<AppFooter />} />
     </>
   );
 };

@@ -1,11 +1,10 @@
-import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import Layout from './layouts/Layout';
 import Home from './pages/Home';
 import Movies from './pages/Movies';
 import TV from './pages/TV';
 import Sports from './pages/Sports';
-import Layout from './layouts/Layout';
 
 import './App.scss';
 
