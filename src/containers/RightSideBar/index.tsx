@@ -35,7 +35,7 @@ const RightSidebar: FC<IRightSidebar> = ({ closeSidebar }) => {
           value={query}
           onChange={setQuery}
           variant="secondary"
-          placeHolder={'Search here'}
+          placeHolder={'Start Searching...'}
           className="RightSidebar__search___input"
         />
         <CloseIcon
@@ -43,7 +43,11 @@ const RightSidebar: FC<IRightSidebar> = ({ closeSidebar }) => {
           onClick={handleRemoveQuery}
         />
       </div>
-      <div className="RightSidebar__searchResults"></div>
+      <div className="RightSidebar__searchResults">
+        <p className="noResults">
+          Search for <br /> shows, movies, sports and TV channels
+        </p>
+      </div>
     </div>
   );
 };

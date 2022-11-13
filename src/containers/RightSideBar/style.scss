@@ -1,6 +1,11 @@
 .RightSidebar {
   background: var(--BG_GRADIENT_L0);
-  height: 100%;
+  padding: 8px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
   &__search {
     display: flex;
@@ -9,13 +14,12 @@
     justify-content: space-around;
     height: 48px;
     background: var(--BG_COLOR_L1);
-    margin: 10px;
 
     &___icons {
-      width: 15px;
-      height: 15px;
+      width: 20px;
+      height: 20px;
       & * {
-        fill: var(--TEXT_COLOR_L1);
+        fill: var(--TEXT_COLOR_L2);
       }
     }
 
@@ -25,6 +29,15 @@
   }
 
   &__searchResults {
-    
+    position: relative;
+    height: 90%;
+
+    .noResults {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
+    }
   }
 }
