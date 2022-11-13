@@ -1,12 +1,9 @@
 import { FC } from 'react';
-import { Link, Path } from 'react-router-dom';
-import './style.scss';
+import { Link } from 'react-router-dom';
 
-export interface IIconWithTitleLink {
-  icon: JSX.Element;
-  title?: string;
-  linkTo: string | Partial<Path>;
-}
+import { IIconWithTitleLink } from '../../models/iconWithTitleLink';
+
+import './style.scss';
 
 const IconWithTitleLink: FC<IIconWithTitleLink> = ({
   icon,
