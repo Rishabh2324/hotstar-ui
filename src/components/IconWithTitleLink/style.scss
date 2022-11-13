@@ -5,4 +5,10 @@
     @include fluid-font-size(.625, .5);
     color: var(--TEXT_COLOR_L2);
   }
+
+  &.active {
+    & * {
+      fill: var(--TEXT_COLOR_L1);
+    }
+  }
 }

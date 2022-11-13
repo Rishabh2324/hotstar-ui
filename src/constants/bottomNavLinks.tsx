@@ -11,13 +11,14 @@ const links = [
     linkTo: '/',
   },
   {
-    icon: <TvIcon stroke="var(--TEXT_COLOR_L4)" />,
+    icon: <TvIcon />,
     title: 'TV',
     linkTo: '/tv',
   },
   {
     icon: <CompanyLogo />,
     linkTo: '/',
+    showActive: false,
   },
   {
     icon: <CinemaIcon />,

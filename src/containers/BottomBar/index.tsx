@@ -5,21 +5,22 @@ import IconWithTitleLink from '../../components/IconWithTitleLink';
 
 import './style.scss';
 
-const BottomNavigation = () => {
+const BottomBar = () => {
   const { deviceType } = useDeviceCheck();
   if (deviceType === 'desktop') return null;
   return (
-    <div className="BottomNavigation">
+    <div className="BottomBar">
       {bottomNavLinks.map((link, index) => (
         <IconWithTitleLink
           key={index}
           linkTo={link.linkTo}
           title={link.title}
           icon={link.icon}
+          showActive={link.showActive}
         />
       ))}
     </div>
   );
 };
 
-export default BottomNavigation;
+export default BottomBar;

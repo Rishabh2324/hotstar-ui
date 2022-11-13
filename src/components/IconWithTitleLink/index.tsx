@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { IIconWithTitleLink } from '../../models/iconWithTitleLink';
 
@@ -9,12 +9,18 @@ const IconWithTitleLink: FC<IIconWithTitleLink> = ({
   icon,
   title = '',
   linkTo,
+  showActive = true,
 }) => {
   return (
-    <Link to={linkTo} className="IconWithTitleLink">
+    <NavLink
+      to={linkTo}
+      className={({ isActive }) =>
+        `IconWithTitleLink ${isActive && showActive ? 'active' : ''}`
+      }
+    >
       {icon}
       {title && <div className="IconWithTitleLink__title">{title}</div>}
-    </Link>
+    </NavLink>
   );
 };
 

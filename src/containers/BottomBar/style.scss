@@ -1,7 +1,9 @@
-.BottomNavigation {
+.BottomBar {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
   align-items: center;
   text-align: center;
+  background: var(--BG_COLOR_L0);
+  height: 56px;
 }
