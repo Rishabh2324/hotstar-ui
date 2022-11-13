@@ -1,0 +1,30 @@
+.RightSidebar {
+  background: var(--BG_GRADIENT_L0);
+  height: 100%;
+
+  &__search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 48px;
+    background: var(--BG_COLOR_L1);
+    margin: 10px;
+
+    &___icons {
+      width: 15px;
+      height: 15px;
+      & * {
+        fill: var(--TEXT_COLOR_L1);
+      }
+    }
+
+    &___input{
+      width: 75%;
+    }
+  }
+
+  &__searchResults {
+    
+  }
+}

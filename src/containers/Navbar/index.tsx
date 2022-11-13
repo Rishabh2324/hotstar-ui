@@ -65,7 +65,7 @@ const Navbar = () => {
         <Sidebar
           toggle={showNavMenu}
           handleToogle={setShowNavMenu}
-          children={<LeftSidebar />}
+          children={<LeftSidebar />} // left side bar is using out side click handler so need to of closeSidebar prop
         />
       ) : null}
 
@@ -74,7 +74,7 @@ const Navbar = () => {
           toggle={showSearch}
           handleToogle={setShowSearch}
           toggleFrom={'right'}
-          children={<RightSidebar />}
+          children={<RightSidebar closeSidebar={setShowSearch} />}
         />
       ) : null}
     </div>

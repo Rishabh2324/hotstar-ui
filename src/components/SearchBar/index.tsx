@@ -1,24 +1,29 @@
-import React, { FC } from 'react';
-import { IInput } from '../../models/Input';
-import Input from '../Input';
+import { FC } from 'react';
 
 import './style.scss';
 
-interface ISearchBar extends IInput {}
+interface ISearchBar {
+  value: string;
+  variant?: 'primary' | 'secondary';
+  placeHolder: string;
+  onChange: Function;
+  className?: string;
+}
 
 const SearchBar: FC<ISearchBar> = ({
   value,
+  variant = 'primary',
   placeHolder,
   onChange,
   className = '',
 }) => {
   return (
-    <div className={`SearchBar ${className}`}>
-      <Input
+    <div className={`SearchBar ${variant} ${className}`}>
+      <input
+        type={'search'}
         value={value}
-        placeHolder={placeHolder}
-        onChange={onChange}
-        type="search"
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeHolder}
       />
     </div>
   );

@@ -2,30 +2,44 @@
 
 .SearchBar {
   position: relative;
-  input[type='search'] {
-    @include inputCommonProperties(bottom, 1px, solid, var(--TEXT_COLOR_L1));
 
-    &:focus {
-      @include inputCommonProperties(bottom, 1px, solid, var(--BRAND_BLUE));
-      @include transition(0.2s ease-out);
+  &.primary {
+    input[type='search'] {
+      @include inputCommonProperties(bottom, 1px, solid, var(--TEXT_COLOR_L1));
+
+      &:focus {
+        @include inputCommonProperties(bottom, 1px, solid, var(--BRAND_BLUE));
+        @include transition(0.2s ease-out);
+      }
+
+      &::placeholder {
+        color: var(--TEXT_COLOR_L1);
+        @include fluid-font-size(1, 1);
+      }
     }
+  }
 
-    &::placeholder {
+  &.secondary {
+    input[type='search'] {
+      border: none;
+      outline: none;
+      background-color: transparent;
       color: var(--TEXT_COLOR_L1);
-      @include fluid-font-size(1, 1);
-    }
+      @include fluid-font-size(1.5, 1.25);
 
+      &::placeholder {
+        color: var(--TEXT_COLOR_L1);
+      }
+    }
+  }
+
+  input[type='search'] {
+    width: 100%;
     &::-webkit-search-decoration,
     &::-webkit-search-cancel-button,
     &::-webkit-search-results-button,
     &::-webkit-search-results-decoration {
       -webkit-appearance: none;
     }
-  }
-
-  &-icon {
-    position: absolute;
-    left: 155px;
-    top: 5px;
   }
 }

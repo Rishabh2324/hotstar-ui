@@ -1,13 +1,17 @@
 import { FC, useEffect, useState } from 'react';
 
-import { IInput } from '../../models/Input';
-
 import './style.scss';
+
+interface IInput {
+  value: string;
+  placeHolder: string;
+  onChange: Function;
+  className?: string;
+}
 
 const Input: FC<IInput> = ({
   value,
   onChange,
-  type = 'text',
   placeHolder,
   className = '',
 }) => {
@@ -24,7 +28,6 @@ const Input: FC<IInput> = ({
 
   return (
     <input
-      type={type}
       value={data}
       className={`Input ${className}`}
       onChange={(e) => handleChange(e.target.value)}

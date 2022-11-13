@@ -1,6 +1,9 @@
 @use '../../scss/index.scss' as *;
 
 .LeftSidebar {
+  background: var(--BG_COLOR_L1);
+  height: 100%;
+
   &__item {
     display: flex;
     justify-content: space-between;

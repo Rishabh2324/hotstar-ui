@@ -1,5 +1,5 @@
 .Sidebar {
-  background: rgba(23,23,23,0.5);
+  background: var(--BG-COLOR_L5);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -13,7 +13,6 @@
   }
 
   &__details {
-    background: var(--BG_COLOR_L1);
     height: 100%;
     opacity: 1;
 
