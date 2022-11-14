@@ -3,6 +3,20 @@
 .Input {
   color: var(--TEXT_COLOR_L2);
   @include fluid-font-size(1, 0.875);
-  @include inputCommonProperties(bottom,1px,solid,var(--BRAND_BLUE));
+  @include inputCommonProperties(bottom, 1px, solid, var(--BRAND_BLUE));
   text-transform: capitalize;
+
+  &__error {
+    display: flex;
+    justify-content: space-between;
+    color: var(--BRAND_RED);
+
+    &___icon {
+      width: 20px;
+      height: 20px;
+      svg * {
+        fill: var(--BRAND_RED);
+      }
+    }
+  }
 }

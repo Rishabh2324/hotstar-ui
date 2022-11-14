@@ -1,0 +1,32 @@
+@use '../../scss/index.scss' as *;
+
+.Login {
+  margin-top: 110px;
+
+  &__heading {
+    @include fluid-font-size(1.25, 1.15, 500);
+    margin-bottom: 60px;
+  }
+
+  &__cta {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    width: 100%;
+    margin: 20px 0;
+    color: var(--TEXT_COLOR_L1);
+    @include fluid-font-size(1.25, 1.25);
+  }
+  
+  &__subText {
+    text-align: center;
+  }
+
+  &__backIcon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+  }
+}

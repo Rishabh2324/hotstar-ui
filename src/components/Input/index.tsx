@@ -1,9 +1,11 @@
 import { FC, useEffect, useState } from 'react';
 
-import './style.scss';
+import { ReactComponent as WarningIcon } from '../../assets/icons/warningIcon.svg';
 
+import './style.scss';
 interface IInput {
   value: string;
+  error?: string;
   placeHolder: string;
   onChange: Function;
   className?: string;
@@ -11,6 +13,7 @@ interface IInput {
 
 const Input: FC<IInput> = ({
   value,
+  error,
   onChange,
   placeHolder,
   className = '',
@@ -27,13 +30,21 @@ const Input: FC<IInput> = ({
   }, [value]);
 
   return (
-    <input
-      value={data}
-      className={`Input ${className}`}
-      onChange={(e) => handleChange(e.target.value)}
-      placeholder={placeHolder}
-      data-testid="InputComponent"
-    />
+    <>
+      <input
+        value={data}
+        className={`Input ${className}`}
+        onChange={(e) => handleChange(e.target.value)}
+        placeholder={placeHolder}
+        data-testid="InputComponent"
+      />
+      {error ? (
+        <div>
+          <p>{error}</p>
+          <WarningIcon />
+        </div>
+      ) : null}
+    </>
   );
 };
 
