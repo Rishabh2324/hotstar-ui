@@ -11,6 +11,8 @@
   &__cta {
     width: 100%;
     margin-bottom: 20px;
+    padding: 15px;
+    @include fluid-font-size(1.625, 1, 600);
   }
 
   &__input {

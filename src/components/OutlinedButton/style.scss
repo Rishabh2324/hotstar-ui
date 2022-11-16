@@ -1,12 +1,10 @@
 @use '../../scss/index.scss' as *;
 
 .OutlinedButton {
-  @include fluid-font-size(1.625, 1, 500);
   background-color: var(--TEXT_BTN_COLOR_L1);
   border: 1px solid var(--BRAND_BLUE);
   color: var(--BRAND_BLUE);
   border-radius: 5px;
-  padding: 15px;
 
   &:hover {
     @include showHoverForBackground(transparent, var(--BG_COLOR_L2));

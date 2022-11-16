@@ -3,7 +3,6 @@
 .Button {
   padding: 3px;
   border-radius: 5px;
-  @include fluid-font-size(0.625, 0.625, 700);
   &--brand-blue {
     @include butttonCommonProperties(var(--TEXT_COLOR_L0), var(--BRAND_BLUE));
   }

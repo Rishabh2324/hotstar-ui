@@ -54,7 +54,11 @@ const Navbar = () => {
         </div>
       ) : null}
 
-      <Button onClick={() => null} buttonText={'SUBSCRIBE'} />
+      <Button
+        className="Navbar__subscribe"
+        onClick={() => null}
+        buttonText={'SUBSCRIBE'}
+      />
 
       <SearchIcon
         className="Navbar__searchIcon"

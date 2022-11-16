@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input/input';
+import PhoneInput from 'react-phone-input-2';
 
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 
@@ -14,9 +14,11 @@ interface IInput {
 }
 
 const PhoneNumberInput: FC<IInput> = ({ value, onChange, className = '' }) => {
-  const ref = useRef();
-  const [data, setData] = useState<IInput['value']>(undefined);
+  const ref = useRef(null);
+  const [data, setData] = useState<IInput['value']>();
   const [errorMessage, setErrorMessage] = useState('');
+
+  // const isValidPhoneNumber = (data: string) => data?.slice(2).length > 0;
 
   // useOnClickOutside(ref, () => {
   //   setErrorMessage(
@@ -29,23 +31,26 @@ const PhoneNumberInput: FC<IInput> = ({ value, onChange, className = '' }) => {
   // });
 
   const handleChange = (value: string) => {
+    setData(value);
     onChange(value);
   };
 
   useEffect(() => {
-    setData(value || undefined);
+    setData(value);
   }, [value]);
 
   return (
-    <>
+    <div ref={ref}>
       <PhoneInput
-        ref={ref}
-        country="IN"
-        international
-        withCountryCallingCode
+        country="in"
         value={data}
+        countryCodeEditable={false}
         onChange={handleChange}
-        className={`PhoneNumberInput ${className}`}
+        inputClass={`PhoneNumberInput ${className}`}
+        inputProps={{
+          required: true,
+          autoFocus: true,
+        }}
       />
       {errorMessage ? (
         <div className="PhoneNumberInput__error">
@@ -53,7 +58,7 @@ const PhoneNumberInput: FC<IInput> = ({ value, onChange, className = '' }) => {
           <WarningIcon className="PhoneNumberInput__error___icon" />
         </div>
       ) : null}
-    </>
+    </div>
   );
 };
 

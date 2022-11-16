@@ -44,4 +44,8 @@
       fill: var(--TEXT_COLOR_L2);
     }
   }
+
+  &__subscribe {
+    @include fluid-font-size(0.625, 0.625, 700);
+  } 
 }
