@@ -10,7 +10,11 @@ import './style.scss';
 
 const LeftSidebar = () => (
   <div className="LeftSidebar">
-    <Link className="LeftSidebar__item smallIcon separator" to={'/login'}>
+    <Link
+      className="LeftSidebar__item smallIcon separator"
+      to={'/login'}
+      onClick={(e) => e.stopPropagation()}
+    >
       <div>
         <p className="text1">Log in</p>
         <p className="text2">For a better experience</p>

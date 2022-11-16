@@ -18,17 +18,20 @@ const PhoneNumberInput: FC<IInput> = ({ value, onChange, className = '' }) => {
   const [data, setData] = useState<IInput['value']>();
   const [errorMessage, setErrorMessage] = useState('');
 
-  // const isValidPhoneNumber = (data: string) => data?.slice(2).length > 0;
+  const withOutDialCode = (data: string) => data?.slice(2);
 
-  // useOnClickOutside(ref, () => {
-  //   setErrorMessage(
-  //     value
-  //       ? isValidPhoneNumber(value)
-  //         ? ''
-  //         : 'Invalid phone number'
-  //       : 'Please enter your mobile number'
-  //   );
-  // });
+  const isValidPhoneNumber = (data: string) =>
+    withOutDialCode(data).length === 10;
+
+  useOnClickOutside(ref, () => {
+    setErrorMessage(
+      value && withOutDialCode(value).length > 0
+        ? isValidPhoneNumber(value)
+          ? ''
+          : 'Invalid phone number'
+        : 'Please enter your mobile number'
+    );
+  });
 
   const handleChange = (value: string) => {
     setData(value);
@@ -42,6 +45,7 @@ const PhoneNumberInput: FC<IInput> = ({ value, onChange, className = '' }) => {
   return (
     <div ref={ref}>
       <PhoneInput
+        specialLabel=""
         country="in"
         value={data}
         countryCodeEditable={false}

@@ -14,8 +14,10 @@
   &__error {
     display: flex;
     justify-content: space-between;
-    color: var(--BRAND_RED);
-
+    p {
+      color: var(--BRAND_RED);
+      @include fluid-font-size(0.75, 0.75);
+    }
     &___icon {
       width: 18px;
       height: 18px;

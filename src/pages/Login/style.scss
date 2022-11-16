@@ -17,7 +17,7 @@
 
   &__input {
     width: 100%;
-    margin: 20px 0;
+    margin: 20px 0 5px 0;
     color: var(--TEXT_COLOR_L1);
     @include fluid-font-size(1.25, 1.25);
   }
