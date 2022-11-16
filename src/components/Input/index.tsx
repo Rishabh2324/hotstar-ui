@@ -7,6 +7,7 @@ interface IInput {
   value: string;
   error?: string;
   placeHolder: string;
+  autoFocus?: boolean;
   onChange: Function;
   className?: string;
 }
@@ -16,6 +17,7 @@ const Input: FC<IInput> = ({
   error,
   onChange,
   placeHolder,
+  autoFocus = false,
   className = '',
 }) => {
   const [data, setData] = useState('');
@@ -36,6 +38,7 @@ const Input: FC<IInput> = ({
         className={`Input ${className}`}
         onChange={(e) => handleChange(e.target.value)}
         placeholder={placeHolder}
+        autoFocus={autoFocus}
         data-testid="InputComponent"
       />
       {error ? (

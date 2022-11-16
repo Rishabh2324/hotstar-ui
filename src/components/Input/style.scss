@@ -5,6 +5,11 @@
   @include fluid-font-size(1, 0.875);
   @include inputCommonProperties(bottom, 1px, solid, var(--BRAND_BLUE));
   text-transform: capitalize;
+  @include transition(0.2s ease-out);
+  
+  &:focus {
+    @include inputCommonProperties(bottom, 2px, solid, var(--BRAND_BLUE));
+  }
 
   &__error {
     display: flex;

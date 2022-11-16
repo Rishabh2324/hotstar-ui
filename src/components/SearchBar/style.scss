@@ -6,10 +6,9 @@
   &.primary {
     input[type='search'] {
       @include inputCommonProperties(bottom, 1px, solid, var(--TEXT_COLOR_L1));
-
+      @include transition(0.2s ease-out);
       &:focus {
-        @include inputCommonProperties(bottom, 1px, solid, var(--BRAND_BLUE));
-        @include transition(0.2s ease-out);
+        @include inputCommonProperties(bottom, 2px, solid, var(--BRAND_BLUE));
       }
 
       &::placeholder {

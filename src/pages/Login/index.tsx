@@ -15,7 +15,7 @@ const Login = () => {
   const [loginType, setLoginType] = useState<LoginType>('phoneNumber');
   const [phoneNumber, setPhoneNumber] = useState({ value: '', isValid: true });
   const [email, setEmail] = useState('');
-  const [showEmailOption, setShowEmailOption] = useState(true);
+  const [showContinueCta, setShowContinueCta] = useState(true);
 
   const handleChange = (value: string) => {
     setPhoneNumber({
@@ -29,18 +29,28 @@ const Login = () => {
   };
 
   useEffect(() => {
-    setShowEmailOption(
-      !(phoneNumber && phoneNumber.value?.slice(2).length > 0)
+    setShowContinueCta(
+      (phoneNumber && phoneNumber.value?.slice(2).length > 0) ||
+        email.length > 0
     );
-  }, [phoneNumber]);
+  }, [phoneNumber, email]);
 
   return (
     <div className="Login">
       {loginType === 'phoneNumber' ? (
         <>
-          <h5 className="Login__heading">Login to continue</h5>
-
-          {showEmailOption ? (
+          {showContinueCta && (
+            <BackIcon
+              className="Login__backIcon"
+              onClick={() => {
+                setPhoneNumber({ ...phoneNumber, value: '91' });
+              }}
+            />
+          )}
+          <h5 className="Login__heading">
+            {showContinueCta ? 'Continue using phone' : 'Login to continue'}
+          </h5>
+          {!showContinueCta ? (
             <>
               <OutlinedButton
                 className="Login__cta"
@@ -50,26 +60,20 @@ const Login = () => {
               <p className="Login__subText">or</p>
             </>
           ) : null}
-
           <PhoneNumberInput
             value={phoneNumber?.value}
             onChange={handleChange}
             className="Login__input"
           />
-
-          {!showEmailOption ? (
-            <Button
-              className="Login__cta"
-              buttonText="Continue to login"
-              onClick={() => null}
-            />
-          ) : null}
         </>
       ) : (
         <>
           <BackIcon
             className="Login__backIcon"
-            onClick={() => setLoginType('phoneNumber')}
+            onClick={() => {
+              setLoginType('phoneNumber');
+              handleEmailChange('');
+            }}
           />
           <h5 className="Login__heading">Enter your email</h5>
           <Input
@@ -77,9 +81,17 @@ const Login = () => {
             onChange={handleEmailChange}
             className="Login__input"
             placeHolder="Enter your email"
+            autoFocus
           />
         </>
       )}
+      {showContinueCta ? (
+        <Button
+          className="Login__cta"
+          buttonText="Continue to login"
+          onClick={() => null}
+        />
+      ) : null}
     </div>
   );
 };
