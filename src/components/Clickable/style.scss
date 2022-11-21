@@ -16,6 +16,9 @@
     }
   }
   &.default {
-    color: var(--BRAND_BLUE);
+    color: var(--TEXT_COLOR_L0);
+  }  
+  &.disabled {
+    color: var(--TEXT_COLOR_L1);
   }
 }
