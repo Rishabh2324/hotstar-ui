@@ -1,0 +1,28 @@
+@use '../../scss/index.scss' as *;
+
+.PreviewPage {
+  &__details {
+    padding: 10px;
+    &-title {
+      @include fluid-font-size(2, 1.5);
+      color: var(--TEXT_COLOR_L0);
+    }
+    &-cate {
+      @include fluid-font-size(1, 0.75);
+      color: var(--BRAND_BLUE);
+      margin: 5px 0;
+    }
+    &-year {
+      @include fluid-font-size(1, 0.625);
+      color: var(--TEXT_COLOR_L1);
+      margin: 5px 0;
+    }
+
+    &-desc {
+      @include fluid-font-size(1, 0.75);
+      color: var(--TEXT_COLOR_L1);
+      margin: 5px 0;
+      @include text-clamp(2);
+    }
+  }
+}

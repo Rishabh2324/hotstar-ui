@@ -5,6 +5,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    a:nth-child(2){
+      color: var(--BRAND_BLUE);
+    }
   }
   &__List {
     margin: 20px auto;

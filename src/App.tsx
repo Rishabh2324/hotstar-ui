@@ -13,6 +13,7 @@ import Genres from './pages/Genres';
 import WatchList from './pages/WatchList';
 import Login from './pages/Login';
 import ShowMore from './pages/ShowMore';
+import PreviewPage from './pages/Preview';
 
 import './App.scss';
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/genres" element={<Genres />} />
           <Route path="/my-watchlist" element={<WatchList />} />
           <Route path="/showmore" element={<ShowMore />} />
+          <Route path="/preview" element={<PreviewPage />} />
         </Route>
       </Routes>
       <Routes>
