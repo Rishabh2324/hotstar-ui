@@ -25,4 +25,14 @@
       @include text-clamp(2);
     }
   }
+  &__socialMediaWrapper {
+    display: flex;
+    margin-top: 15px;
+  
+    &-mediaIcon {
+      width: 24px;
+      height: 24px;
+      margin: 0 10px;
+    }
+  }
 }

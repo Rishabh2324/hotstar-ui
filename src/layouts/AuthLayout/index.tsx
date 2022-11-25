@@ -1,11 +1,10 @@
 import { Link, Outlet } from 'react-router-dom';
-
-import Footer from '../Footer';
 import Header from '../Header';
 
 import { ReactComponent as DisneyPlusHotstarLogo } from '../../assets/logos/logoDisneyPlusHotstar.svg';
 
 import './style.scss';
+import AboutFooter from '../../containers/AboutFooter';
 
 const AppHeader = () => {
   return (
@@ -17,13 +16,15 @@ const AppHeader = () => {
 
 const AuthLayout = () => {
   return (
-    <div className="AuthLayout">
-      <Header children={<AppHeader />} />
-      <main>
-        <Outlet />
-      </main>
-      <Footer children={<></>} />
-    </div>
+    <>
+      <div className="AuthLayout">
+        <Header children={<AppHeader />} />
+        <main>
+          <Outlet />
+        </main>
+      </div>
+      <AboutFooter />
+    </>
   );
 };
 

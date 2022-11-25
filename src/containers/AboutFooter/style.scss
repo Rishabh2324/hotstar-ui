@@ -1,0 +1,55 @@
+@use '../../scss/index.scss' as *;
+
+.AboutFooter {
+  padding: 10px;
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    &-link {
+      @include fluid-font-size(1, 1);
+      color: var(--TEXT_COLOR_L1);
+      margin-right: 10px;
+    }
+  }
+
+  &__desc {
+    @include fluid-font-size(1, 0.75);
+    color: var(--TEXT_COLOR_L1);
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .heading {
+      @include fluid-font-size(0.75, 0.75);
+      color: var(--TEXT_COLOR_L4);
+    }
+
+    &-connectWithUs {
+      &__icons {
+        display: flex;
+        margin: 10px 0;
+        .icon {
+          width: 30px;
+          height: 30px;
+          margin-right: 15px;
+        }
+      }
+    }
+    &-download {
+      text-align: center;
+      &__icons {
+        display: flex;
+        margin: 10px 0;
+        flex-wrap: wrap;
+        .storeDownloadIcon {
+          width: 100px;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
