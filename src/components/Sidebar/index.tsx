@@ -27,10 +27,14 @@ const Sidebar: FC<ISidebar> = ({
   }, [isSidebarOpen]);
 
   return (
-    <div className={`Sidebar ${showSideBar ? 'expand' : ''}`}>
+    <div
+      className={`Sidebar ${showSideBar ? 'expand' : ''} ${
+        toggleFrom === 'left' ? 'toggleLeft' : 'toggleRight'
+      }`}
+    >
       <div
         ref={ref}
-        className={`Sidebar__details ${
+        className={`Sidebar__details-${
           toggleFrom === 'left' ? 'fromLeft' : 'fromRight'
         }`}
       >

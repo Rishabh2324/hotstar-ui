@@ -1,5 +1,10 @@
 @use '../../scss/index.scss' as *;
 
 .Header {
-  background-color: var(--BG_GRADIENT_L0);
+  background: var(--BG_GRADIENT_L0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }

@@ -46,7 +46,34 @@ const PreviewPage = () => {
           <TwitterShareIcon className="PreviewPage__socialMediaWrapper-mediaIcon" />
           <LinkShareIcon className="PreviewPage__socialMediaWrapper-mediaIcon" />
         </div>
-
+        <ThumbnailCardList
+          leftClickableLink="/"
+          leftClickableText="More like this"
+          rightClickableLink="/"
+          rightClickableText="More"
+          listData={data.data}
+        />
+        <ThumbnailCardList
+          leftClickableLink="/"
+          leftClickableText="More like this"
+          rightClickableLink="/"
+          rightClickableText="More"
+          listData={data.data}
+        />{' '}
+        <ThumbnailCardList
+          leftClickableLink="/"
+          leftClickableText="More like this"
+          rightClickableLink="/"
+          rightClickableText="More"
+          listData={data.data}
+        />
+        <ThumbnailCardList
+          leftClickableLink="/"
+          leftClickableText="More like this"
+          rightClickableLink="/"
+          rightClickableText="More"
+          listData={data.data}
+        />
         <ThumbnailCardList
           leftClickableLink="/"
           leftClickableText="More like this"

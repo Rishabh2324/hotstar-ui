@@ -1,28 +1,35 @@
 .Sidebar {
   background: var(--BG-COLOR_L5);
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1;
-  display: none;
+  transition: transform 0.1s;
 
+  &.toggleRight {
+    transform: translateX(100%);
+  }
+  &.toggleLeft {
+    transform: translateX(-100%);
+  }
   &.expand {
-    display: block;
+    transform: translateX(0%);
   }
 
   &__details {
-    height: 100%;
     opacity: 1;
 
-    &.fromLeft {
+    &-fromLeft {
       width: 80%;
+      height: 100%;
       margin-right: auto;
     }
 
-    &.fromRight {
+    &-fromRight {
       width: 100%;
+      height: 100%;
       margin-left: auto;
     }
   }

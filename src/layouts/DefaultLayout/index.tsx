@@ -1,16 +1,18 @@
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 
-import useDeviceCheck from '../hooks/useDeviceCheck';
+import useDeviceCheck from '../../hooks/useDeviceCheck';
 
-import Footer from './Footer';
-import Header from './Header';
+import Footer from '../Footer';
+import Header from '../Header';
 
-import Navbar from '../containers/Navbar';
-import BottomBar from '../containers/BottomBar';
-import AboutFooter from '../containers/AboutFooter';
-import LeftSidebar from '../containers/LeftSidebar';
-import RightSidebar from '../containers/RightSideBar';
+import Navbar from '../../containers/Navbar';
+import BottomBar from '../../containers/BottomBar';
+import AboutFooter from '../../containers/AboutFooter';
+import LeftSidebar from '../../containers/LeftSidebar';
+import RightSidebar from '../../containers/RightSideBar';
+
+import './style.scss';
 
 // Common Layout for all pages with Header and Footer
 const Layout = () => {
@@ -29,6 +31,8 @@ const Layout = () => {
           />
         }
       />
+
+      {/* Application left Sidebar and right sidebar*/}
       <aside>
         {deviceType === 'mobile' ? (
           <LeftSidebar
@@ -43,11 +47,14 @@ const Layout = () => {
           />
         ) : null}
       </aside>
-      <main>
+
+      {/* All children are rendered here*/}
+      <main className="Layout-main">
         {/* <Outlet /> is used to renders the child route's element */}
         <Outlet />
       </main>
 
+      {/* Privacy policy footer */}
       <AboutFooter />
 
       <Footer children={<BottomBar />} />
