@@ -1,12 +1,9 @@
-import { MouseEvent, useState } from 'react';
+import { FC, MouseEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import useDeviceCheck from '../../hooks/useDeviceCheck';
 import topNavlinks from '../../constants/topNavLinks';
 
-import LeftSidebar from '../LeftSidebar';
-import RightSidebar from '../RightSideBar';
-import Sidebar from '../../components/Sidebar';
 import Button from '../../components/Button';
 
 import { ReactComponent as SearchIcon } from '../../assets/icons/searchIcon.svg';
@@ -15,19 +12,21 @@ import { ReactComponent as DisneyPlusHotstarLogo } from '../../assets/logos/logo
 
 import './style.scss';
 
-const Navbar = () => {
+interface INavbar {
+  handleLeftSidebar?: Function;
+  handleRightSidebar?: Function;
+}
+const Navbar: FC<INavbar> = ({ handleLeftSidebar, handleRightSidebar }) => {
   const { deviceType } = useDeviceCheck();
-  const [showNavMenu, setShowNavMenu] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
 
   const handleMenuIconClick = (event: MouseEvent) => {
     event.stopPropagation();
-    setShowNavMenu(true);
+    handleLeftSidebar && handleLeftSidebar(true);
   };
 
   const handleSearchIconClick = (event: MouseEvent) => {
     event.stopPropagation();
-    setShowSearch(true);
+    handleRightSidebar && handleRightSidebar(true);
   };
 
   return (
@@ -64,23 +63,6 @@ const Navbar = () => {
         className="Navbar__searchIcon"
         onClick={handleSearchIconClick}
       />
-
-      {deviceType === 'mobile' ? (
-        <Sidebar
-          toggle={showNavMenu}
-          handleToogle={setShowNavMenu}
-          children={<LeftSidebar />} // left side bar is using out side click handler so need to of closeSidebar prop
-        />
-      ) : null}
-
-      {deviceType === 'mobile' ? (
-        <Sidebar
-          toggle={showSearch}
-          handleToogle={setShowSearch}
-          toggleFrom={'right'}
-          children={<RightSidebar closeSidebar={setShowSearch} />}
-        />
-      ) : null}
     </div>
   );
 };

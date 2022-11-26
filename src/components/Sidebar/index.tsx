@@ -1,31 +1,30 @@
 import { FC, useEffect, useRef, useState } from 'react';
+import { IDeafaultSideBarProps } from '../../constants/sidebarInterface';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 import './style.scss';
 
-interface ISidebar {
-  toggle: boolean;
-  handleToogle: Function;
+interface ISidebar extends IDeafaultSideBarProps {
   toggleFrom?: 'left' | 'right';
   children?: JSX.Element;
 }
 
 const Sidebar: FC<ISidebar> = ({
-  toggle,
-  handleToogle,
   toggleFrom = 'left',
   children,
+  isSidebarOpen,
+  toggleSidebar,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [showSideBar, setShowSideBar] = useState(false);
 
   useOnClickOutside(ref, () => {
-    handleToogle(false);
+    toggleSidebar(false);
   });
 
   useEffect(() => {
-    setShowSideBar(toggle);
-  }, [toggle]);
+    setShowSideBar(isSidebarOpen);
+  }, [isSidebarOpen]);
 
   return (
     <div className={`Sidebar ${showSideBar ? 'expand' : ''}`}>
