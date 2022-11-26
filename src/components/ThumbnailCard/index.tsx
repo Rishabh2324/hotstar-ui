@@ -7,7 +7,6 @@ import Button from '../Button';
 import './style.scss';
 
 export interface IThumbnailCard {
-  variant?: 'portrait' | 'landscape';
   assetUrl: string;
   title: string;
   summary: string;
@@ -17,7 +16,6 @@ export interface IThumbnailCard {
 }
 
 const ThumbnailCard: FC<IThumbnailCard> = ({
-  variant = 'portrait',
   assetUrl,
   title,
   summary,
@@ -28,7 +26,7 @@ const ThumbnailCard: FC<IThumbnailCard> = ({
   const { deviceType } = useDeviceCheck();
   return (
     <Link to={linkTo} title={title}>
-      <div className={`ThumbnailCard ${variant} ${className}`}>
+      <div className={`ThumbnailCard ${className}`}>
         <img src={assetUrl} alt={title} />
         {deviceType === 'desktop' && (
           <>

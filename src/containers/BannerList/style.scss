@@ -1,0 +1,20 @@
+.BannerList {
+  margin: 20px auto;
+  overflow: hidden;
+  &__List {
+    margin: 20px auto;
+    overflow: visible;
+    &-Item {
+      height: 300px;
+    }
+  }
+  // HACK TO PREVENT SLICK OVERFLOW ISSSUE WHILE HOVERING ON ELEMENTS
+  .slick-list {
+    overflow: visible;
+  }
+  [data-index='0'] .ThumbnailCard {
+    &:hover {
+      transform: scale3d(1.2, 1.2, 1) translate3d(11%, 0, 0) perspective(500px);
+    }
+  }
+}

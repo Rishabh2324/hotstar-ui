@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 import Slider from 'react-slick';
 
-import Clickable from '../Clickable';
-import ThumbnailCard, { IThumbnailCard } from '../ThumbnailCard';
+import Clickable from '../../components/Clickable';
+import ThumbnailCard, { IThumbnailCard } from '../../components/ThumbnailCard';
 
 import './style.scss';
 

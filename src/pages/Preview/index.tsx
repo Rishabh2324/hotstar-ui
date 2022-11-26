@@ -1,6 +1,6 @@
 import React from 'react';
 import BannerComponent from '../../components/BannerComponent';
-import ThumbnailCardList from '../../components/ThumbnailCardList';
+import ThumbnailCardList from '../../containers/ThumbnailCardList';
 
 import { ReactComponent as FaceBookShareIcon } from '../../assets/icons/facebookShareIcon.svg';
 import { ReactComponent as LinkShareIcon } from '../../assets/icons/linkIcon.svg';
@@ -16,6 +16,7 @@ const PreviewPage = () => {
   return (
     <div className="PreviewPage">
       <BannerComponent
+        linkTo={''}
         bannerSrc="https://images.unsplash.com/photo-1611076351766-d561d39b6af3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
         bannerAlt="w1"
       >
